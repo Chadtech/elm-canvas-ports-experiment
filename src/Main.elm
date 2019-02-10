@@ -73,6 +73,3 @@ update msg model =
 
         MouseUpOnCanvas ->
             ( Model.clearMouseDownPosition model, Cmd.none )
-
-        MsgDecodeFailed _ ->
-            ( model, Cmd.none )

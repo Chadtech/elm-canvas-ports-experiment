@@ -13,6 +13,5 @@ globals =
 
 pBasic : Style
 pBasic =
-    [ fontFamilies [ "Arial" ]
-    ]
+    [ fontFamilies [ "Arial" ] ]
         |> Css.batch

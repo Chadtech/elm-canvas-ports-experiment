@@ -18,7 +18,7 @@ view model =
     , body =
         [ Style.globals
         , title
-        , Html.Styled.Lazy.lazy drawingCanvas ()
+        , drawingCanvas
         , summary
         ]
             |> List.map Html.toUnstyled
@@ -44,20 +44,8 @@ centerTextStyle =
     textAlign center
 
 
-{-| Html.Lazy will avoid rerendering html if the
-input values have not changed, which improves performance
-(yay pure functions).
-
-But in this case, I just want to make sure its never ever
-rerendered, because I dont want the canvas getting whipped
-away. This is a way to protect the html I never want
-altered by the virtual DOM. Html.Lazy checks every render
-cycle that () == (), finding it to be true, and then doesnt
-proceed any further, knowing it shouldnt change the canvas html
-
--}
-drawingCanvas : () -> Html Msg
-drawingCanvas _ =
+drawingCanvas : Html Msg
+drawingCanvas =
     Html.div
         [ Attrs.css
             [ displayFlex

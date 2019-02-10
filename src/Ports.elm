@@ -1,6 +1,5 @@
 port module Ports exposing
     ( JsMsg(..)
-    , fromJs
     , send
     )
 
@@ -68,6 +67,3 @@ encodeTo255 =
 
 
 port toJs : Encode.Value -> Cmd msg
-
-
-port fromJs : (Encode.Value -> msg) -> Sub msg

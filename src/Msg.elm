@@ -13,4 +13,3 @@ type Msg
     = MouseDownOnCanvas Position
     | MouseMoveOnCanvas Position
     | MouseUpOnCanvas
-    | MsgDecodeFailed Decode.Error
